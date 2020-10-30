@@ -39,16 +39,16 @@ namespace WindowsFormsCoreDemo4SQL
             using (var conn = new MySqlConnection(builder.ConnectionString))
             {
                 Console.WriteLine("Opening connection");
-                 conn.Open();
+                conn.Open();
 
                 using (var command = conn.CreateCommand())
                 {
                     command.CommandText = "DROP TABLE IF EXISTS inventory;";
-                     command.ExecuteNonQueryAsync();
+                    command.ExecuteNonQueryAsync();
                     Console.WriteLine("Finished dropping table (if existed)");
 
                     command.CommandText = "CREATE TABLE inventory (id serial PRIMARY KEY, name VARCHAR(50), quantity INTEGER);";
-                     command.ExecuteNonQueryAsync();
+                    command.ExecuteNonQueryAsync();
                     Console.WriteLine("Finished creating table");
 
                     command.CommandText = @"INSERT INTO inventory (name, quantity) VALUES (@name1, @quantity1),
@@ -80,13 +80,19 @@ namespace WindowsFormsCoreDemo4SQL
 
         private void button2_Click(object sender, EventArgs e)
         {
+            initsql2();
+
+        }
+
+        private void initsql()
+        {
             string connString = "server=localhost;database=ccf02;uid=root;pwd=root";
             MySqlConnection conn = new MySqlConnection(connString);
             try
             {
                 conn.Open();
                 MessageBox.Show("连接成功！", "测试结果");
-                MySqlDataReader reader = null;
+                // MySqlDataReader reader = null;
 
                 MySqlCommand cmd = new MySqlCommand("SHOW DATABASES", conn);
 
@@ -96,17 +102,38 @@ namespace WindowsFormsCoreDemo4SQL
 
                 {
 
-                    reader = cmd.ExecuteReader();
-
-                    //databaseList.Items.Clear();
-
-                    while (reader.Read())
-
+                    using (var command = conn.CreateCommand())
                     {
+                        command.CommandText = "SELECT * FROM person_test;";
 
-                        //databaseList.Items.Add(reader.GetString(0));
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
 
+                                if (richTextBox1.InvokeRequired)
+                                {
+                                    this.Invoke(new Action(() =>
+                                    {
+                                        richTextBox1.Text = reader.GetString(0);
+                                    }));
+                                }
+                                richTextBox1.AppendText(reader[1].ToString() + "\r\n");
+                                //Console.WriteLine(string.Format(
+                                //    "Reading from table=({0}, {1}, {2})",
+                                //    reader.GetInt32(0),
+                                //    reader.GetString(1),
+                                //    reader.GetInt32(2)));
+                            }
+                        }
                     }
+                    //while (reader.Read())
+
+                    //{
+
+                    //    //databaseList.Items.Add(reader.GetString(0));
+
+                    //}
 
                 }
 
@@ -126,6 +153,60 @@ namespace WindowsFormsCoreDemo4SQL
             {
                 conn.Close();
             }
+        }
+        private void initsql2()
+        {
+            //数据库连接串
+            //string connStr = "Data Source=.;Initial Catalog=test;User ID=sa;Password=root";
+            string connStr = "server=localhost;database=ccf02;uid=root;pwd=root";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+               
+                conn.Open();
+                MessageBox.Show("连接成功！", "测试结果");
+                MySqlDataReader reader = null;
+                
+                MySqlCommand cmd1 = conn.CreateCommand();
+                cmd1.CommandText = "SELECT * FROM person_test";
+                MySqlDataAdapter adap1 = new MySqlDataAdapter(cmd1);
+                DataSet ds1 = new DataSet();
+                adap1.Fill(ds1);
+                dataGridView1.DataSource = ds1.Tables[0].DefaultView;
+
+                //MySqlCommand cmd2 = conn.CreateCommand();
+                //cmd2.CommandText = "SELECT * FROM person_test";
+                //MySqlDataAdapter adap2 = new MySqlDataAdapter(cmd2);
+                //DataSet ds2 = new DataSet();
+                //adap2.Fill(ds2);
+                //dataGridView1.DataSource = ds2.Tables[0].DefaultView;
+
+
+                //MySqlCommand cmdstr = new MySqlCommand("SHOW DATABASES", conn);
+
+
+
+
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("查询错误！" + ex.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    //关闭数据库连接
+                    conn.Close();
+                }
+
+            }
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
