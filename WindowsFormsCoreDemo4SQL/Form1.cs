@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsCoreDemo4SQL
 {
     public partial class Form1 : Form
@@ -21,7 +22,7 @@ namespace WindowsFormsCoreDemo4SQL
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -203,6 +204,7 @@ namespace WindowsFormsCoreDemo4SQL
 
             }
         }
+
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

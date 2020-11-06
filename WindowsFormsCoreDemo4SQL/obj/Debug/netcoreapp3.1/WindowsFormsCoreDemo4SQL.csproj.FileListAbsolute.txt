@@ -20,4 +20,3 @@ D:\Gitrepository\github\web\WindowsFormsCoreDemo4SQL\obj\Debug\netcoreapp3.1\Win
 D:\Gitrepository\github\web\WindowsFormsCoreDemo4SQL\obj\Debug\netcoreapp3.1\WindowsFormsCoreDemo4SQL.pdb
 D:\Gitrepository\github\web\WindowsFormsCoreDemo4SQL\obj\Debug\netcoreapp3.1\WindowsFormsCoreDemo4SQL.genruntimeconfig.cache
 D:\Gitrepository\github\web\WindowsFormsCoreDemo4SQL\bin\Debug\netcoreapp3.1\MySqlConnector.dll
-D:\Gitrepository\github\web\WindowsFormsCoreDemo4SQL\obj\Debug\netcoreapp3.1\WindowsFormsCoreDemo4SQL.csproj.CoreCompileInputs.cache
