@@ -110,4 +110,5 @@ ModelManifest.xml
 
 #zzzili
 v15/
-
+*.zip
+*.rar
