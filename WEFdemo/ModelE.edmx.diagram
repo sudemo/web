@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b5f62b769a014c27ba9f750f1d1ccf2d" Name="Diagram1">
+        <EntityTypeShape EntityType="ccf02Model.auth_group" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.auth_group_permissions" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.auth_permission" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.auth_user" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.auth_user_groups" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.auth_user_user_permissions" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.capsule" Width="1.5" PointX="5.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.cup_person" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.django_admin_log" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.django_content_type" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.django_migrations" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.django_session" Width="1.5" PointX="7.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ccf02Model.person_test" Width="1.5" PointX="8.75" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="ccf02Model.auth_group_permissions_group_id_b120cbf9_fk_auth_group_id" ManuallyRouted="false" />
+        <AssociationConnector Association="ccf02Model.auth_user_groups_group_id_97559544_fk_auth_group_id" ManuallyRouted="false" />
+        <AssociationConnector Association="ccf02Model.auth_group_permissio_permission_id_84c5c92e_fk_auth_perm" ManuallyRouted="false" />
+        <AssociationConnector Association="ccf02Model.auth_permission_content_type_id_2f476e4b_fk_django_co" ManuallyRouted="false" />
+        <AssociationConnector Association="ccf02Model.auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm" ManuallyRouted="false" />
+        <AssociationConnector Association="ccf02Model.auth_user_groups_user_id_6a12ed8b_fk_auth_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="ccf02Model.auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="ccf02Model.django_admin_log_user_id_c564eba6_fk_auth_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="ccf02Model.django_admin_log_content_type_id_c4bce8eb_fk_django_co" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
