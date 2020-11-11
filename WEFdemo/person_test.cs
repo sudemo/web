@@ -15,7 +15,7 @@ namespace WEFdemo
 
     public partial class person_test
     {
-        [Key]
+        //[Key]
         public int idperson_test { get; set; }
         public string name { get; set; }
         public Nullable<int> age { get; set; }
