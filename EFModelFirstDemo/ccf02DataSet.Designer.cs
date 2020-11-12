@@ -1051,7 +1051,7 @@ namespace EFModelFirstDemo.ccf02DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::EFModelFirstDemo.Properties.Settings.Default.ccf02ConnectionString;
+            this._connection.ConnectionString = global::EFModelFirstDemo.Properties.Settings.Default.ccf02ConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
