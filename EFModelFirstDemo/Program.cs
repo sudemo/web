@@ -31,7 +31,7 @@ namespace EFModelFirstDemo
 
                 Console.WriteLine(rs.name);
             }
-            Console.ReadLine();
+            //Console.ReadLine();
             //c
         }
     }

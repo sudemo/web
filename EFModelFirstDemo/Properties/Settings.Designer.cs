@@ -26,10 +26,10 @@ namespace EFModelFirstDemo.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=root;database=ccf02")]
-        public string ccf02ConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=root;database=ccf02")]
+        public string ccf02ConnectionString1 {
             get {
-                return ((string)(this["ccf02ConnectionString"]));
+                return ((string)(this["ccf02ConnectionString1"]));
             }
         }
     }
